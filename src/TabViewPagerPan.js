@@ -79,7 +79,9 @@ export default class TabViewPagerPan<T: *> extends React.Component<Props<T>> {
     },
   };
 
-  componentWillMount() {
+  constructor(props, context) {
+    super(props, context);
+
     this._panResponder = PanResponder.create({
       onMoveShouldSetPanResponder: this._canMoveScreen,
       onMoveShouldSetPanResponderCapture: this._canMoveScreen,
